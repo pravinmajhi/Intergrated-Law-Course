@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Contributors</title>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #34495e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .contributor-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .contributor-card {
+            position: relative;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            width: 250px;
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .contributor-card img {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+            transition: transform 0.3s;
+        }
+
+        .contributor-info {
+            padding: 20px;
+            background-color: #34495e;
+            color: white;
+            position: absolute;
+            bottom: -100%;
+            width: 100%;
+            text-align: center;
+            transition: bottom 0.3s;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .social-icons a:hover img {
+            transform: scale(1.2);
+        }
+
+        .contributor-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .contributor-card:hover .contributor-info {
+            bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #34495e;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .contributor-card {
+                width: 90%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+    <header>
+        <h1>Website Contributors</h1>
+    </header>
+
+    <section class="contributors">
+        <h2>Faculty</h2>
+        <div class="contributor-container">
+            <div class="contributor-card">
+                <img src="teacher1.jpg" alt="Faculty 1">
+                <div class="contributor-info">
+                    <h3>Dr. John Smith</h3>
+                    <div class="social-icons">
+                        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                        <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="contributor-card">
+                <img src="teacher2.jpg" alt="Faculty 2">
+                <div class="contributor-info">
+                    <h3>Dr. Jane Doe</h3>
+                    <div class="social-icons">
+                        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                        <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contributors">
+        <h2>Students</h2>
+        <div class="contributor-container">
+            <div class="contributor-card">
+                <img src="images/_VIV0186.JPG" alt="Student 1">
+                <div class="contributor-info">
+                    <h3>Alice Johnson</h3>
+                    <div class="social-icons">
+                        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                        <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="contributor-card">
+                <img src="student2.jpg" alt="Student 2">
+                <div class="contributor-info">
+                    <h3>Bob Brown</h3>
+                    <div class="social-icons">
+                        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                        <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="contributor-card">
+                <img src="student3.jpg" alt="Student 3">
+                <div class="contributor-info">
+                    <h3>Carol White</h3>
+                    <div class="social-icons">
+                        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                        <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="contributor-card">
+                <img src="student4.jpg" alt="Student 4">
+                <div class="contributor-info">
+                    <h3>David Green</h3>
+                    <div class="social-icons">
+                        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                        <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 [Institution Name]. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Under Construction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo img {
+            max-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        .animation {
+            margin: 20px 0;
+        }
+
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 8px solid #3498db;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        .loader-text {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .social-media {
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            display: inline-block;
+            margin: 0 10px;
+            text-decoration: none;
+            color: #3498db;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-icon:hover {
+            color: #2980b9;
+        }
+
+        @media (max-width: 600px) {
+            .social-icon {
+                font-size: 18px;
+            }
+        }
+    </style>
+    <div class="container">
+        <div class="logo">
+            <a href=""> <img src="images/Faculty_Of_Law_University_of_Delhi-removebg-preview.png"
+                    alt="Institution Logo"></a>
+
+        </div>
+        <div class="content">
+            <h1>Our Website is Under Construction</h1>
+            <p>We are working hard to bring you a new experience. Stay tuned!</p>
+            <div class="animation">
+                <div class="loader"></div>
+                <div class="loader-text">Coming Soon...</div>
+            </div>
+            <p>Follow us on social media:</p>
+            <div class="social-media">
+                <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

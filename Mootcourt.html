@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <style>
+        html {
+            overflow-x: hidden;
+            scrollbar-width: thin;
+        }
+
+        /* Reset some default styles */
+        body,
+        ul,
+        li,
+        a {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        /* Navbar container */
+        .navbar {
+            width: calc(100% - 4px);
+            padding: 8px;
+            margin: 0 auto;
+            background-image: linear-gradient(to right, #443970 75%, #443970 25%);
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            border-radius: 8px;
+        }
+
+        /* Left section with email logo and email address */
+        .left-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .email-logo {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .email-link {
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        /* Hamburger menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger .line {
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            margin: 4px 0;
+        }
+
+        /* Navbar links */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            border-radius: 8px;
+        }
+
+        .nav-links li {
+            margin-right: 15px;
+        }
+
+        .nav-links li a {
+            color: #ffffff;
+            font-size: 16px;
+            padding: 8px 12px;
+        }
+
+        .nav-links li a:hover {
+            background-color: #5a4f8d;
+            border-radius: 4px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #443970;
+            }
+
+            .nav-links li {
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .navbar.active .nav-links {
+                display: flex;
+            }
+
+        }
+
+        /*********main-nav-starts*************/
+        /* Navbar container */
+        .main-nav {
+            width: 100%;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: transparent;
+            /* No background color */
+            box-sizing: border-box;
+        }
+
+        /* Logo on the left-hand side */
+        .logo img {
+            width: 90%;
+            padding: 22px;
+        }
+
+
+        /* Hamburger menu for mobile view */
+        .chickenburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .chickenburger .line {
+            width: 25px;
+            height: 3px;
+            background-color: #000;
+            /* Black color for the hamburger lines */
+            margin: 4px 0;
+        }
+
+        /* Navigation links */
+        .main-nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .main-nav-links li {
+            margin-left: 20px;
+            /* Spacing between links */
+        }
+
+        .main-nav-links li a {
+            color: #000;
+            /* Black color for the links */
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+        }
+
+        .main-nav-links li a:hover {
+            color: #555;
+            /* Slightly lighter color on hover */
+        }
+
+        /* Responsive design for mobile */
+        @media (max-width: 768px) {
+
+            .logo img {
+                width: 50%;
+                padding: 70px;
+            }
+
+            .main-nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .main-nav-links li {
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .chickenburger {
+                display: flex;
+            }
+
+            .main-nav.active .main-nav-links {
+                display: flex;
+            }
+        }
+
+        /********Notification*********/
+
+
+
+
+
+
+
+        /****************gallary************/
+
+
+
+
+
+        .gallery-container {
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            overflow: hidden;
+        }
+
+        .gallery-item {
+            display: inline-block;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.1);
+        }
+
+
+
+
+        /*****************Footer*****************/
+
+        /* Footer Styles */
+        .footer {
+
+            padding: 8px;
+            border-top: 1px solid #e7e7e7;
+            background-color: #51428B;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: #51428B;
+
+        }
+
+        .footer-container a {
+            color: #e7e7e7;
+        }
+
+        .footer-left {
+            flex: 1;
+            min-width: 250px;
+            margin-right: 20px;
+            padding: 12px;
+        }
+
+        .institute-name {
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+
+        .institute-address {
+            margin: 0;
+        }
+
+        .footer-right {
+            display: flex;
+            justify-content: space-between;
+            flex: 2;
+            min-width: 250px;
+        }
+
+        .footer-column {
+            flex: 1;
+            margin-right: 20px;
+            min-width: 150px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 8px;
+        }
+
+        .subfooter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border: 1px solid #e7e7e7;
+            background-color: #443970;
+            border-radius: 3px;
+        }
+
+        .subfooter p {
+            margin: 0;
+        }
+
+        .social-medi a {
+            margin: 0 10px;
+        }
+
+        .social-medi img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+            }
+
+            .footer-right {
+                flex-direction: row-reverse;
+            }
+
+            .footer-column {
+                margin-bottom: 20px;
+            }
+
+            .subfooter {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-media a {
+                margin: 5px;
+            }
+        }
+
+
+
+        /****************Moot Court Page******************/
+        header {
+            background-color: #050505;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            color: #eceff3;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #7f8c8d;
+        }
+
+        ul {
+            margin-left: 20px;
+            color: #34495e;
+        }
+
+        .social-media-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .committee-logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #34495e;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .social-media-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .social-icons {
+                margin-top: 15px;
+            }
+        }
+    </style>
+    <nav class="navbar">
+
+        <div class="left-section">
+            <img src="images/envelope-regular.svg" alt="Email Logo" class="email-logo">
+            <a href="mailto:admission5yr2023.law.du.ac" class="email-link">admission5yr2023.law.du.ac</a>
+        </div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Fee Payment Portal</a></li>
+            <li><a href="#">ILC e-Library</a></li>
+            <li><a href="#">Prospectus</a></li>
+        </ul>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+
+    <!----------main-nav-starts------------------>
+
+
+
+    <div class="main-nav">
+        <div class="logo">
+            <a href=""><img src="images/Beige_Simple_Photo_Signature_Twitter_Profile_Picture-removebg-preview.png"
+                    alt="Institution Logo"></a>
+
+        </div>
+        <div class="chickenburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class="main-nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Committees & Societies</a></li>
+            <li><a href="#">Faculty</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Blogs & Events</a></li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <!--------------MootCourt-Society------->
+
+
+    <header>
+        <h1>Moot Court Society</h1>
+    </header>
+
+    <section class="importance">
+        <h2 style="color: #000;">Importance of Moot Court Society</h2>
+        <p>
+            The Moot Court Society (MCS) at ILC, Faculty of Law, University of Delhi, is a student-run
+            society dedicated to fostering a culture of legal argumentation. This society provides a
+            platform for students to hone their courtroom skills through a variety of mooting activities.
+            Freshers can take their first steps in legal advocacy through the Annual Freshers Moot Pool
+            Competition, designed specifically for first-year students. More seasoned students, from
+            second to fifth year, can test their mettle in the annual common mood pool competition.
+            Students who excel can earn the chance to represent ILC at prestigious national and
+            international moot courts through a competitive ranking and screening process.
+            The society recognises the importance of well-rounded legal training. They offer workshops
+            led by experienced legal professionals, providing invaluable insights from the field. Events
+            featuring prominent legal figures allow students to learn from the best. Additionally, the MCS
+            facilitates networking opportunities, fostering connections that can benefit students
+            throughout their legal careers.
+            By participating in these activities, students gain a wellspring of critical legal skills. They learn
+            to analyse intricate legal scenarios, craft persuasive arguments, and present their cases with
+            confidence. The opportunity to receive feedback from seasoned legal professionals further
+            sharpens their abilities, ensuring they graduate with the courtroom-ready skills sought after
+            by employers.
+        </p>
+    </section>
+
+    <section class="events">
+        <h2 style="color: #000;">Past Events</h2>
+        <p>
+            Since its inception, the Moot Court Society has organized <strong>[Number]</strong> moot court competitions
+            in our college. Each event has witnessed enthusiastic participation from students across various law
+            schools, making it a prestigious and competitive event in the legal education calendar.
+        </p>
+        <p>
+            Some of the notable events include:
+        <ul>
+            <li>1st Annual Moot Court Competition - [Year]</li>
+            <li>2nd Annual Moot Court Competition - [Year]</li>
+            <li>3rd Annual Moot Court Competition - [Year]</li>
+            <!-- Add more events as needed -->
+        </ul>
+        </p>
+    </section>
+
+    <section class="social-media">
+        <div class="social-media-container">
+            <div class="committee-logo">
+                <img src="images/moot.jpg" alt="Moot Court Society Logo">
+            </div>
+            <div class="social-icons">
+                <a href="#"><img src="images/facebook-f-brands-solid.svg" alt="Facebook"></a>
+                <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Moot Court Society, [College Name]. All rights reserved.</p>
+    </footer>
+
+
+
+
+
+    <br>
+    <br>
+
+    <div class="gallery-container" style="overflow-x: auto; scrollbar-width: thin;">
+        <div class="gallery-item">
+            <img src="images/Screenshot 2024-09-01 130736.png" alt="Image 1">
+        </div>
+        <div class="gallery-item">
+            <img src="images/_VIV0186.JPG" alt="Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="images/Screenshot 2024-08-31 232455.png" alt="Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="images/Screenshot 2024-09-01 130753.png" alt="Image 4">
+        </div>
+        <div class="gallery-item">
+            <img src="images/WhatsApp Image 2024-08-31 at 21.31.21_f60ca3d3.jpg" alt="Image 5">
+        </div>
+        <div class="arrow-container">
+            <a href="#next" class="arrow">&#x279C;</a> <!-- Right arrow -->
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!----------------------footer--------------------------------------->
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <!-- Map View and Institute Info -->
+            <div class="footer-left">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.0618290510993!2d77.20929218299351!3d28.687797018761884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd164f23c85d%3A0x339a7501aa092c51!2sMaharishi%20Kanad%20Bhawan!5e0!3m2!1sen!2sau!4v1725114354398!5m2!1sen!2sau"
+                    width="70%" height="120" frameborder="0" style="border:12px #000; border-radius: 9px; padding: 7px;"
+                    allowfullscreen="" aria-hidden="false" tabindex="0">
+                </iframe>
+                <p class="institute-name" style="color: #f8f9fa;"> 5-Year Integrated Law Course</p>
+                <p class="institute-address" style="color: #e7e7e7;">Maharishi Kanad Bhawan, University Enclave Delhi,
+                    New Delhiy</p>
+            </div>
+
+            <!-- Columns with Subheadings -->
+            <div class="footer-right">
+                <div class="footer-column">
+                    <h3>Academics</h3>
+                    <ul>
+                        <li><a href="#">Faculty</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Faculty of Law</a></li>
+                        <li><a href="#">University of Delhi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Students</h3>
+                    <ul>
+                        <li><a href="#">Time Table</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Case Material</a></li>
+                        <li><a href="#">ILC e-library</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms and Conditions</a></li>
+                        <li><a href="#">Copyright Policy</a></li>
+                        <li><a href="#">Notifications</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subfooter -->
+        <div class="subfooter">
+            <p style="padding: 5px; color: #e7e7e7;">&copy; 2024 5-Year Integrated Law Course (ILC). All Rights
+                Reserved.</p><br><a href="/About.html" style="color: #f8f9fa; padding: 12px;">Developed and published by
+                Faculty & Students
+                at ILC University of Delhi</a>
+            <div class="social-medi">
+                <a href="https://facebook.com"><img src="images/facebook-f-brands-solid.svg" alt="Facebook"></a>
+                <a href="https://twitter.com"><img src="images/x-twitter-brands-solid.svg" alt="Twitter"></a>
+                <a href="https://instagram.com"><img src="images/instagram-brands-solid.svg" alt="Instagram"></a>
+                <a href="https://linkedin.com"><img src="images/linkedin-brands-solid.svg" alt="LinkedIn"></a>
+                <a href="https://youtu.be/AejSwTO9xvw?si=31MHcNXXykCj7Fw0"><img src="images/youtube-brands-solid.svg"
+                        alt="Youtube"></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // JavaScript for toggling the hamburger menu
+        document.querySelector(".hamburger").addEventListener("click", function () {
+            document.querySelector(".navbar").classList.toggle("active");
+        });
+
+
+        // JavaScript for toggling the hamburger menu
+        document.querySelector(".chickenburger").addEventListener("click", function () {
+            document.querySelector(".main-nav").classList.toggle("active");
+        });
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Example: Add some JavaScript if needed for interaction
+            console.log("Moot Court Society page loaded.");
+        });
+    </script>
+</body>
+
+</html>

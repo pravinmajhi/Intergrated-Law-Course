@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses: BA LLB and BBA LLB</title>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #34495e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        .courses {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .course-column {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            width: 45%;
+            text-align: left;
+            transition: transform 0.3s;
+        }
+
+        .course-column:hover {
+            transform: scale(1.02);
+        }
+
+        .course-column ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .course-column ul li {
+            margin: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #34495e;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .course-column {
+                width: 90%;
+            }
+        }
+    </style>
+    <header>
+        <h1>Courses Offered</h1>
+    </header>
+
+    <section class="courses">
+        <div class="course-column">
+            <h2>BA LLB</h2>
+            <p>The BA LLB course integrates the study of law with the study of humanities, providing a broad educational
+                foundation and specialized legal knowledge. This five-year program combines academic learning with
+                practical training, preparing students for various legal careers.</p>
+            <ul>
+                <li>Duration: 5 Years</li>
+                <li>Core Subjects: Constitutional Law, Criminal Law, Corporate Law, Environmental Law</li>
+                <li>Career Opportunities: Lawyer, Legal Advisor, Judge, Corporate Legal Consultant</li>
+            </ul>
+        </div>
+
+        <div class="course-column">
+            <h2>BBA LLB</h2>
+            <p>The BBA LLB course merges business administration with legal education, equipping students with
+                managerial skills alongside legal knowledge. This five-year program prepares students for a career in
+                legal consultancy, corporate law, and business management.</p>
+            <ul>
+                <li>Duration: 5 Years</li>
+                <li>Core Subjects: Business Law, Corporate Management, Finance, Marketing</li>
+                <li>Career Opportunities: Corporate Lawyer, Legal Manager, Business Consultant, Compliance Officer</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 [Institution Name]. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

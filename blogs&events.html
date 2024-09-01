@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <style>
+        html {
+            overflow-x: hidden;
+            scrollbar-width: thin;
+        }
+
+        /* Reset some default styles */
+        body,
+        ul,
+        li,
+        a {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        /* Navbar container */
+        .navbar {
+            width: calc(100% - 4px);
+            padding: 8px;
+            margin: 0 auto;
+            background-image: linear-gradient(to right, #443970 75%, #443970 25%);
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            border-radius: 8px;
+        }
+
+        /* Left section with email logo and email address */
+        .left-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .email-logo {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .email-link {
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        /* Hamburger menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger .line {
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            margin: 4px 0;
+        }
+
+        /* Navbar links */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            border-radius: 8px;
+        }
+
+        .nav-links li {
+            margin-right: 15px;
+        }
+
+        .nav-links li a {
+            color: #ffffff;
+            font-size: 16px;
+            padding: 8px 12px;
+        }
+
+        .nav-links li a:hover {
+            background-color: #5a4f8d;
+            border-radius: 4px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #443970;
+            }
+
+            .nav-links li {
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .navbar.active .nav-links {
+                display: flex;
+            }
+
+        }
+
+        /*********main-nav-starts*************/
+        /* Navbar container */
+        .main-nav {
+            width: 100%;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: transparent;
+            /* No background color */
+            box-sizing: border-box;
+        }
+
+        /* Logo on the left-hand side */
+        .logo img {
+            width: 90%;
+            padding: 22px;
+        }
+
+
+        /* Hamburger menu for mobile view */
+        .chickenburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .chickenburger .line {
+            width: 25px;
+            height: 3px;
+            background-color: #000;
+            /* Black color for the hamburger lines */
+            margin: 4px 0;
+        }
+
+        /* Navigation links */
+        .main-nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .main-nav-links li {
+            margin-left: 20px;
+            /* Spacing between links */
+        }
+
+        .main-nav-links li a {
+            color: #000;
+            /* Black color for the links */
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+        }
+
+        .main-nav-links li a:hover {
+            color: #555;
+            /* Slightly lighter color on hover */
+        }
+
+        /* Responsive design for mobile */
+        @media (max-width: 768px) {
+
+            .logo img {
+                width: 50%;
+                padding: 70px;
+            }
+
+            .main-nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .main-nav-links li {
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .chickenburger {
+                display: flex;
+            }
+
+            .main-nav.active .main-nav-links {
+                display: flex;
+            }
+        }
+
+        /********Notification*********/
+        /* Container for the notification */
+        .notification-container {
+            width: 100%;
+            background-color: #42445A;
+            color: white;
+            overflow: hidden;
+            position: relative;
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Static label for "Latest Notification and Announcement" */
+        .notification-label {
+            flex-shrink: 0;
+            padding-left: 15px;
+            padding-right: 15px;
+            background-color: #42445A;
+            font-weight: bold;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            z-index: 1;
+        }
+
+        /* Scrolling text */
+        .notification-text {
+            white-space: nowrap;
+            display: inline-block;
+            animation: scrollText 15s linear infinite;
+            padding-left: 20px;
+            /* Space between static label and scrolling text */
+        }
+
+        /* Animation for the scrolling effect */
+        @keyframes scrollText {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+
+
+        /* Carousel container */
+
+
+
+
+
+
+
+
+
+        /***********Committies and Societies*********/
+
+
+
+
+        /****************blogs&Events************/
+
+
+        header {
+            background-color: #34495e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .blog-container,
+        .event-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .blog-card,
+        .event-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            width: 300px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+
+        .blog-card img {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .blog-card h3,
+        .event-card h3 {
+            color: #34495e;
+            margin-top: 15px;
+        }
+
+        .blog-card p,
+        .event-card p {
+            color: #7f8c8d;
+            margin: 15px 0;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #2980b9;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .read-more:hover {
+            background-color: #1c5985;
+        }
+
+        .blog-card:hover,
+        .event-card:hover {
+            transform: translateY(-10px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #34495e;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+
+            .blog-container,
+            .event-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .blog-card,
+            .event-card {
+                width: 90%;
+                margin: 10px 0;
+            }
+        }
+
+
+
+
+
+
+
+
+        /*****************Footer*****************/
+
+        /* Footer Styles */
+        footer {
+            background-color: #f8f9fa;
+            padding: 8px;
+            border-top: 1px solid #e7e7e7;
+            background-color: #51428B;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: #51428B;
+
+        }
+
+        .footer-container a {
+            color: #e7e7e7;
+        }
+
+        .footer-left {
+            flex: 1;
+            min-width: 250px;
+            margin-right: 20px;
+            padding: 12px;
+        }
+
+        .institute-name {
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+
+        .institute-address {
+            margin: 0;
+        }
+
+        .footer-right {
+            display: flex;
+            justify-content: space-between;
+            flex: 2;
+            min-width: 250px;
+        }
+
+        .footer-column {
+            flex: 1;
+            margin-right: 20px;
+            min-width: 150px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 8px;
+        }
+
+        .subfooter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border: 1px solid #e7e7e7;
+            background-color: #443970;
+            border-radius: 3px;
+        }
+
+        .subfooter p {
+            margin: 0;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+        }
+
+        .social-media img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+            }
+
+            .footer-right {
+                flex-direction: row-reverse;
+            }
+
+            .footer-column {
+                margin-bottom: 20px;
+            }
+
+            .subfooter {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-media a {
+                margin: 5px;
+            }
+        }
+    </style>
+    <nav class="navbar">
+
+        <div class="left-section">
+            <img src="images/envelope-regular.svg" alt="Email Logo" class="email-logo">
+            <a href="mailto:admission5yr2023.law.du.ac" class="email-link">admission5yr2023.law.du.ac</a>
+        </div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Fee Payment Portal</a></li>
+            <li><a href="#">ILC e-Library</a></li>
+            <li><a href="#">Prospectus</a></li>
+        </ul>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+
+    <!----------main-nav-starts------------------>
+
+    <div class="main-nav">
+        <div class="logo">
+            <a href=""><img src="images/Beige_Simple_Photo_Signature_Twitter_Profile_Picture-removebg-preview.png"
+                    alt="Institution Logo"></a>
+
+        </div>
+        <div class="chickenburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class="main-nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Committees & Societies</a></li>
+            <li><a href="#">Faculty</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Blogs & Events</a></li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!----------Notifiaction----------->
+    <div class="notification-container">
+        <div class="notification-label">Latest Notification and Announcement:</div>
+        <div class="notification-text">
+            Admissions open for 2024-2025 | Annual Sports Meet on September 15th | Webinar on Cybersecurity,
+            register now!
+        </div>
+    </div>
+
+    <br>
+
+    <!---------------Blogs&Events---------->
+    <header>
+        <h1>Blogs and Events</h1>
+    </header>
+
+    <section class="blogs">
+        <h2>Latest Blogs</h2>
+        <div class="blog-container">
+            <div class="blog-card">
+                <img src="blog1.jpg" alt="Blog 1">
+                <h3>Blog Title 1</h3>
+                <p>Brief description of the blog content. This is a short excerpt to entice readers to click and read
+                    more.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            <div class="blog-card">
+                <img src="blog2.jpg" alt="Blog 2">
+                <h3>Blog Title 2</h3>
+                <p>Brief description of the blog content. This is a short excerpt to entice readers to click and read
+                    more.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            <div class="blog-card">
+                <img src="blog3.jpg" alt="Blog 3">
+                <h3>Blog Title 3</h3>
+                <p>Brief description of the blog content. This is a short excerpt to entice readers to click and read
+                    more.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            <!-- Add more blog cards as needed -->
+        </div>
+    </section>
+
+    <section class="events">
+        <h2>Upcoming Events</h2>
+        <div class="event-container">
+            <div class="event-card">
+                <h3>Event Title 1</h3>
+                <p>Date: September 20, 2024</p>
+                <p>Location: Main Auditorium</p>
+                <p>Description of the event. Highlight key details and why attendees should be interested.</p>
+                <a href="#" class="read-more">Learn More</a>
+            </div>
+            <div class="event-card">
+                <h3>Event Title 2</h3>
+                <p>Date: October 5, 2024</p>
+                <p>Location: Conference Hall</p>
+                <p>Description of the event. Highlight key details and why attendees should be interested.</p>
+                <a href="#" class="read-more">Learn More</a>
+            </div>
+            <div class="event-card">
+                <h3>Event Title 3</h3>
+                <p>Date: November 10, 2024</p>
+                <p>Location: Online</p>
+                <p>Description of the event. Highlight key details and why attendees should be interested.</p>
+                <a href="#" class="read-more">Learn More</a>
+            </div>
+            <!-- Add more event cards as needed -->
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!----------------------footer--------------------------------------->
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <!-- Map View and Institute Info -->
+            <div class="footer-left">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.0618290510993!2d77.20929218299351!3d28.687797018761884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd164f23c85d%3A0x339a7501aa092c51!2sMaharishi%20Kanad%20Bhawan!5e0!3m2!1sen!2sau!4v1725114354398!5m2!1sen!2sau"
+                    width="70%" height="120" frameborder="0" style="border:12px #000; border-radius: 9px; padding: 7px;"
+                    allowfullscreen="" aria-hidden="false" tabindex="0">
+                </iframe>
+                <p class="institute-name" style="color: #f8f9fa;"> 5-Year Integrated Law Course</p>
+                <p class="institute-address" style="color: #e7e7e7;">Maharishi Kanad Bhawan, University Enclave Delhi,
+                    New Delhiy</p>
+            </div>
+
+            <!-- Columns with Subheadings -->
+            <div class="footer-right">
+                <div class="footer-column">
+                    <h3>Academics</h3>
+                    <ul>
+                        <li><a href="#">Faculty</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Faculty of Law</a></li>
+                        <li><a href="#">University of Delhi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Students</h3>
+                    <ul>
+                        <li><a href="#">Time Table</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Case Material</a></li>
+                        <li><a href="#">ILC e-library</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms and Conditions</a></li>
+                        <li><a href="#">Copyright Policy</a></li>
+                        <li><a href="#">Notifications</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subfooter -->
+        <div class="subfooter">
+            <p style="padding: 5px; color: #e7e7e7;">&copy; 2024 5-Year Integrated Law Course (ILC). All Rights
+                Reserved.</p><br><a href="/About.html" style="color: #f8f9fa; padding: 12px;">Developed and published by
+                Faculty & Students
+                at ILC University of Delhi</a>
+            <div class="social-media">
+                <a href="https://facebook.com"><img src="images/facebook-f-brands-solid.svg" alt="Facebook"></a>
+                <a href="https://twitter.com"><img src="images/x-twitter-brands-solid.svg" alt="Twitter"></a>
+                <a href="https://instagram.com"><img src="images/instagram-brands-solid.svg" alt="Instagram"></a>
+                <a href="https://linkedin.com"><img src="images/linkedin-brands-solid.svg" alt="LinkedIn"></a>
+                <a href="https://youtu.be/AejSwTO9xvw?si=31MHcNXXykCj7Fw0"><img src="images/youtube-brands-solid.svg"
+                        alt="Youtube"></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // JavaScript for toggling the hamburger menu
+        document.querySelector(".hamburger").addEventListener("click", function () {
+            document.querySelector(".navbar").classList.toggle("active");
+        });
+
+
+        // JavaScript for toggling the hamburger menu
+        document.querySelector(".chickenburger").addEventListener("click", function () {
+            document.querySelector(".main-nav").classList.toggle("active");
+        });
+
+    </script>
+</body>
+
+</html>
